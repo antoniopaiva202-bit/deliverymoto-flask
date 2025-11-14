@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery10 | Sistema de Pedidos</title>
+  <link rel="stylesheet" href="/static/css/solicitacao.css">
+
+</head>
+
+<body>
+  <div id="from_fundo_solicitacao">
+
+    <h1> Solicitação </h1>
+
+
+
+    <div id="from_frente_solicitacao">
+
+    <form action="/solicitacao" id="solicitacao" method="post">
+
+
+    <h1> Dados para retirada </h1>
+
+        <label for="solicitante">Solicitante</label>
+        <input type="text" id="solicitante" name="solicitante" required placeholder="Digite o nome do solicitante"><br><br>
+
+        <label for="endereco_retirada">Endereço Retirada</label>
+        <input type="text" id="endereco_retirada" name="endereco_retirada" required
+          placeholder="Digite o endereço de retirada"><br><br>
+
+        <label for="numero_retirada">Número Retirada</label>
+        <input type="text" id="numero_retirada" name="numero_retirada" required placeholder="Digite o número"><br><br>
+
+        <label for="bairro_retirada">Bairro Retirada</label>
+        <input type="text" id="bairro_retirada" name="bairro_retirada" required placeholder="Digite o bairro"><br><br>
+
+    <h1> Dados para entrega </h1>
+
+        <label for="cliente">Cliente</label>
+        <input type="text" id="cliente" name="cliente" required placeholder="Digite o nome do cliente"><br><br>
+
+        <label for="endereco_entrega">Endereço Entrega</label>
+        <input type="text" id="endereco_entrega" name="endereco_entrega" required
+          placeholder="Digite o endereço de entrega"><br><br>
+
+        <label for="numero_entrega">Número Entrega</label>
+        <input type="text" id="numero_entrega" name="numero_entrega" required placeholder="Digite o número"><br><br>
+
+        <label for="bairro_entrega">Bairro Entrega</label>
+        <input type="text" id="bairro_entrega" name="bairro_entrega" required placeholder="Digite o bairro"><br><br>
+
+        <label for="data_hora">Data/Hora</label>
+        <input type="datetime-local" id="data_hora" name="data_hora" required><br><br>
+
+        <button type="submit">Solicitar</button>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</html>
+

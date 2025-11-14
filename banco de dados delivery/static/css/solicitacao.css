@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+:root {
+    --primary: #f0ec13d0;
+    --primary-dark: #0606019e;
+    --primary-light: rgba(255, 107, 0, 0.1);
+    --secondary: #231d4a;
+    --dark: #2D3436;
+    --light: #F5F6FA;
+    --gray: #DFE6E9;
+    --success: #d0d60f;
+    --error: #D63031;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    background-color: var(--gray);
+    background: url(/static/imagens/logo_deliverymoto.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+div#from_fundo_solicitacao {
+    background-color: var(--light);
+    opacity: .9;
+    margin: 5% 20% auto 20%;
+    text-align: center;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+div#from_frente_solicitacao {
+    background-color: var(--primary);
+    opacity: .9;
+    margin: 5% auto;
+    text-align: center;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    padding: 30px;
+}
+
+h1 {
+    color: var(--secondary);
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 15px;
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border: 3px solid var(--primary-dark);
+    background-color: var(--light);
+    color: var(--dark);
+    width: 80%;
+    max-width: 500px;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+}
+
+input:focus {
+    background-color: var(--primary);
+    color: var(--dark);
+    border-color: var(--secondary);
+    outline: none;
+    transform: scale(1.05);
+}
+
+button {
+    background-color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    padding: 15px 40px;
+    border: 3px solid var(--primary-dark);
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 20px;
+    box-shadow: var(--box-shadow);
+    color: var(--secondary);
+}
+
+button:hover {
+    background-color: var(--primary);
+    font-size: 30px;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery10 - Login</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+
+</head>
+
+<body>
+    <div id="login_fundo"> 
+            <h1>
+
+            Login
+
+            </h1>
+
+        <div id="login_frente">
+            <br>
+            <form action="/login" method="post">
+
+                <div class="form-group">
+                    <label for="Usuario">Nome</label>
+                    <input type="text" id="usuario" name="nome" required placeholder="Digite seu usuario">
+                </div>
+                <br>
+                <br>
+                <div class="form-group">
+                    <label for="senha">   Senha    </label>
+                    <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
+                </div>
+                <br>
+                <br>
+                <button type="submit">Entrar</button>
+
+            </form>
+
+            <div class="login-footer">
+                <br>
+                <p>Não tem uma conta? <br>
+                    <a href="/cadastro">Cadastre-se</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
