@@ -1,98 +1,143 @@
-@charset "UTF - 8";
+@charset "UTF-8";
 
 :root {
     --primary: #f0ec13d0;
-    --primary-dark: #0606019e;
-    --primary-light: rgba(255, 107, 0, 0.1);
     --secondary: #231d4a;
     --dark: #2D3436;
     --light: #F5F6FA;
     --gray: #DFE6E9;
-    --success: #d0d60f;
+    --success: #10df4a;
     --error: #D63031;
     --border-radius: 16px;
-    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* FUNDO */
 body {
-
-    background-color: var(--gray);
-    background: url(/static/imagens/logo_deliverymoto.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    min-height: 100vh;
+    background: url(/static/imagens/logo_deliverymoto.jpg) center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-div#login_fundo {
-    background-color: var(--light);
-    opacity: .9;
-    margin: 10% 30% auto 30%;
+/* CONTAINER PRINCIPAL */
+#login_fundo {
+    background-color: rgba(245, 246, 250, 0.95);
+    width: 100%;
+    max-width: 420px;
+    padding: 24px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     text-align: center;
-    border-radius: 20%;
-    font-weight: bold;
-    background-attachment: fixed;
- 
-
 }
 
-div#login_frente {
+/* CARD INTERNO */
+#login_frente {
     background-color: var(--primary);
-    opacity: .9;
-    margin: 5% auto;
-    text-align: center;
-    border-radius: 20%;
+    padding: 24px;
+    border-radius: var(--border-radius);
+}
+
+/* TÍTULO */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
     font-weight: bold;
 }
 
-label{
-
-    font-size: 30px;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 30px;
-}
-
-input{
-
+input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
     border-radius: 30px;
-    font-size: 30px;
+    border: none;
+    outline: none;
+}
+
+input:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px var(--secondary);
+}
+
+/* BOTÃO */
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 18px;
     font-weight: bold;
-}
-
-input:focus{
-
-    background-color: var(--primary);
-    color: var(--dark);
-}
-
-button{
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
     background-color: white;
-    font-size: 30px;
-    font-weight: bold;
-    border-radius: 10%;
+    transition: 0.3s;
 }
 
-button:hover{
-
-    background-color: var(--primary);
-    font-size: 37px;
+button:hover {
+    background-color: var(--secondary);
+    color: white;
 }
 
+/* FLASH MESSAGES */
 .flash-container {
     margin-bottom: 15px;
 }
 
 .flash-message {
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .flash-message.erro {
     background-color: #ffb3b3;
-    color: #a10000;
+    color: #7a0000;
+}
+
+/* RODAPÉ */
+.login-footer {
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.login-footer a {
+    color: var(--secondary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* 📱 AJUSTES EXTRAS PARA TELAS MUITO PEQUENAS */
+@media (max-width: 360px) {
+    #login_fundo {
+        padding: 16px;
+    }
+
+    button {
+        font-size: 16px;
+    }
 }
