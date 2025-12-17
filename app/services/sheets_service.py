@@ -1,6 +1,7 @@
 import gspread
-from google.oauth2.service_account import Credentials
 import os
+import json
+from google.oauth2.service_account import Credentials
 
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -8,16 +9,15 @@ SCOPES = [
 ]
 
 def abrir_planilha(nome):
-    caminho_credenciais = os.getenv("GOOGLE_CREDENTIALS_JSON")
+    credenciais_json = os.getenv("GOOGLE_CREDENTIALS")
 
-    if not caminho_credenciais:
-        raise ValueError("Variável GOOGLE_CREDENTIALS_JSON não encontrada!")
+    if not credenciais_json:
+        raise ValueError("Variável GOOGLE_CREDENTIALS não encontrada")
 
-    if not os.path.exists(caminho_credenciais):
-        raise FileNotFoundError(f"Arquivo de credenciais não encontrado: {caminho_credenciais}")
+    credenciais_dict = json.loads(credenciais_json)
 
-    credentials = Credentials.from_service_account_file(
-        caminho_credenciais,
+    credentials = Credentials.from_service_account_info(
+        credenciais_dict,
         scopes=SCOPES
     )
 

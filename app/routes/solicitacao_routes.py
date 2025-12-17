@@ -37,17 +37,17 @@ def solicitacao_post():
     status_inicial = "Pendente"
 
     dados = [
-        request.form["solicitante"],
-        request.form["endereco_retirada"],
-        request.form["numero_retirada"],
-        request.form["bairro_retirada"],
-        request.form["cliente"],
-        request.form["endereco_entrega"],
-        request.form["numero_entrega"],
-        request.form["bairro_entrega"],
+        request.form["solicitante"].upper(),
+        request.form["endereco_retirada"].upper(),
+        request.form["numero_retirada"].upper(),
+        request.form["bairro_retirada"].upper(),
+        request.form["cliente"].upper(),
+        request.form["endereco_entrega"].upper(),
+        request.form["numero_entrega"].upper(),
+        request.form["bairro_entrega"].upper(),
         data_hora_formatada,
         proximo_id,
-        status_inicial
+        status_inicial.upper()
     ]
 
     aba.append_row(dados)

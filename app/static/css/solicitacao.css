@@ -117,5 +117,7 @@ button:hover {
     border-left: 6px solid #28a745; /* barra verde */
     color: #155724; /* texto escuro */
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
+

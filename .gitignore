@@ -1,2 +1,9 @@
-service_account_cred.json
+# Python cache
+__pycache__/
+*.pyc
+
+# Ambiente
 .env
+
+# Google credentials
+service_account_cred.json
