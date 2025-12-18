@@ -11,10 +11,10 @@ def cadastro():
 
 @cadastro_bp.route("/cadastro", methods=["POST"])
 def cadastro_post():
-    nome = request.form["nome"].upper()
-    celular = request.form["celular"]
-    senha = request.form["senha"]
-    confirmar = request.form["confirmar_senha"]
+    nome = request.form["nome"].strip().upper()
+    celular = request.form["celular"].strip()
+    senha = request.form["senha"].strip()
+    confirmar = request.form["confirmar_senha"].strip()
 
     if senha != confirmar:
         flash("As senhas não coincidem!", "erro")

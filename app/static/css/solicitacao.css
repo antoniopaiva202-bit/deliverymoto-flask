@@ -1,123 +1,248 @@
 @charset "UTF-8";
 
+/* ===== VARIÁVEIS GLOBAIS (MESMO PADRÃO DO LOGIN) ===== */
 :root {
-    --primary: #f0ec13d0;
-    --primary-dark: #0606019e;
-    --primary-light: rgba(255, 107, 0, 0.1);
-    --secondary: #231d4a;
-    --dark: #2D3436;
-    --light: #f9faf5;
-    --gray: #DFE6E9;
-    --success: #d0d60f;
-    --error: #D63031;
-    --border-radius: 16px;
-    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --primary: #f0ec13;
+    --primary-dark: #c9c500;
+    --primary-light: rgba(240, 236, 19, 0.15);
+    --dark: #0f0f0f;
+    --dark-soft: rgba(0, 0, 0, 0.75);
+    --light: #ffffff;
+    --light-soft: rgba(255, 255, 255, 0.92);
+    --gray: #f2f2f2;
+    
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --radius-sm: 8px;
+    
+    --shadow-strong: 0 20px 40px rgba(0, 0, 0, 0.35);
+    --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.2);
+    --shadow-input: 0 5px 15px rgba(0, 0, 0, 0.1);
+    
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* ===== BODY (CONSISTENTE COM LOGIN) ===== */
 body {
-    background-color: var(--gray);
-    background: url(/static/imagens/logo_deliverymoto.jpg);
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont;
+    background: 
+        linear-gradient(var(--dark-soft), var(--dark-soft)),
+        url("/static/imagens/logo_deliverymoto.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px;
 }
 
-div#from_fundo_solicitacao {
-    background-color: var(--light);
-    opacity: .9;
-    margin: 5% 20% auto 20%;
-    text-align: center;
-    border-radius: var(--border-radius);
-    font-weight: bold;
-    padding: 20px;
-    box-shadow: var(--box-shadow);
+/* ===== CONTAINER PRINCIPAL ===== */
+#from_fundo_solicitacao {
+    width: 100%;
+    max-width: 680px;
+    padding: 45px 40px;
+    
+    background: var(--light-soft);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-strong);
+    
+    animation: fadeUp 0.8s ease;
+    margin-bottom: 30px;
 }
 
-div#from_frente_solicitacao {
-    background-color: var(--primary);
-    opacity: .9;
-    margin: 5% auto;
+/* ===== CABEÇALHO / TÍTULO ===== */
+#from_frente_solicitacao {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    padding: 25px 30px;
+    margin-bottom: 35px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
     text-align: center;
-    border-radius: var(--border-radius);
-    font-weight: bold;
-    padding: 30px;
 }
 
 h1 {
-    color: var(--secondary);
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--light);
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
 }
 
+/* ===== FORMULÁRIO ===== */
+.form-group {
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+/* ===== LABELS (PADRÃO UNIFICADO) ===== */
 label {
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 15px;
-    color: var(--secondary);
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dark);
+    padding-left: 8px;
 }
 
-input {
+/* ===== INPUTS (PADRÃO UNIFICADO) ===== */
+input, select, textarea {
+    width: 100%;
+    padding: 16px 22px;
     border-radius: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px 25px;
-    border: 3px solid var(--primary-dark);
+    border: 2px solid #ddd;
     background-color: var(--light);
+    font-size: 16px;
+    font-weight: 600;
     color: var(--dark);
-    width: 80%;
-    max-width: 500px;
     transition: var(--transition);
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--shadow-input);
+    box-sizing: border-box;
 }
 
-input:focus {
-    background-color: var(--primary);
-    color: var(--dark);
-    border-color: var(--secondary);
+input::placeholder, select::placeholder, textarea::placeholder {
+    color: #999;
+    font-weight: 500;
+}
+
+input:focus, select:focus, textarea:focus {
     outline: none;
-    transform: scale(1.05);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(240, 236, 19, 0.3);
+    background-color: var(--light);
+    transform: translateY(-2px);
 }
 
-button {
-    background-color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-    border-radius: var(--border-radius);
-    padding: 15px 40px;
-    border: 3px solid var(--primary-dark);
+/* ===== BOTÃO (PADRÃO UNIFICADO) ===== */
+button[type="submit"] {
+    width: 100%;
+    padding: 18px;
+    
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--dark);
+    
+    border: none;
+    border-radius: 30px;
+    
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
     cursor: pointer;
     transition: var(--transition);
-    margin-top: 20px;
-    box-shadow: var(--box-shadow);
-    color: var(--secondary);
+    margin-top: 10px;
+    box-shadow: var(--shadow-soft);
 }
 
-button:hover {
-    background-color: var(--primary);
-    font-size: 30px;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+button[type="submit"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+button[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
+/* ===== FLASH MESSAGES (CONSISTENTE) ===== */
+.flash-container {
+    margin-bottom: 25px;
 }
 
 .flash-message {
-    padding: 15px 20px;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 700;
     text-align: center;
-    background-color: #10df4a; /* fundo clarinho */
-    border-left: 6px solid #28a745; /* barra verde */
-    color: #155724; /* texto escuro */
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: slideIn 0.5s ease;
+    box-shadow: var(--shadow-soft);
 }
 
+.flash-message.success {
+    background-color: rgba(208, 214, 15, 0.15);
+    color: #5c5e08;
+    border-left: 5px solid var(--success);
+}
 
+.flash-message.error {
+    background-color: rgba(214, 48, 49, 0.15);
+    color: #a10000;
+    border-left: 5px solid var(--error);
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+    }
+    
+    #from_fundo_solicitacao {
+        max-width: 95%;
+        padding: 35px 25px;
+        margin: 10px auto;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    input, select, textarea {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+    
+    button[type="submit"] {
+        padding: 16px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #from_fundo_solicitacao {
+        padding: 30px 20px;
+    }
+    
+    #from_frente_solicitacao {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    label {
+        font-size: 15px;
+    }
+}

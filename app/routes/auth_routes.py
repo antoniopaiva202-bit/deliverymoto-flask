@@ -13,8 +13,9 @@ def login():
 
 @auth_bp.route("/login", methods=["POST"])
 def login_post():
-    nome = request.form["nome"]
-    senha = request.form["senha"]
+    nome = request.form["nome"].strip().upper()
+    senha = request.form["senha"].strip()
+
 
     planilha = abrir_planilha(SHEET_NAME)
     aba_clientes = planilha.worksheet("Dados_clientes")
