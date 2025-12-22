@@ -1,68 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery10 - Login</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/static/css/login.css">
 </head>
 
-
-
-
-
 <body>
 
-    <div id="login_fundo">
-
-        <h1>Login</h1>
-
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-                <div class="flash-container">
-        {% for category, message in messages %}
-                <div class="flash-message {{ category }}">
-        {{ message }}
-                </div>
-        {% endfor %}
-                </div>
-        {% endif %}
-        {% endwith %}
-
-        <div id="login_frente">
-
-            <br>
-
-            <form action="/login" method="post">
-
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" style="text-transform: uppercase;" required placeholder="Digite seu usuario">
-                </div>
-
-                <br><br>
-
-                <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
-                </div>
-
-                <br><br>
-
-                <button type="submit">Entrar</button>
-
-            </form>
-
-            <div class="login-footer">
-                <br>
-                <p>Não tem uma conta? <br>
-                    <a href="/cadastro">Cadastre-se</a>
-                </p>
-            </div>
-
-        </div>
+    <!-- LOADING -->
+    <div id="loading">
+        <img src="/static/imagens/logo_natal.jpg" alt="Logo">
+        <p>Carregando...</p>
     </div>
+
+    <!-- APP -->
+    <div id="app" style="display: none;">
+
+        <div id="login_fundo">
+
+            <h1>Login</h1>
+
+            <!-- FLASH MESSAGES (Flask) -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <div id="login_frente">
+
+                <form action="/login" method="post">
+
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            required
+                            placeholder="Digite seu usuário"
+                            style="text-transform: uppercase;"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            required
+                            placeholder="Digite sua senha"
+                        >
+                    </div>
+
+                    <button type="submit">Entrar</button>
+
+                </form>
+
+                <div class="login-footer">
+                    <p>
+                        Não tem uma conta?<br>
+                        <a href="/cadastro">Cadastre-se</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="/static/js/script.js"></script>
 
 </body>
 </html>

@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 :root {
-    --primary: #f0ec13;
-    --primary-dark: #c9c500;
+    --primary: #d3d042;
+    --primary-dark: #adac5e;
     --dark: #0f0f0f;
     --dark-soft: rgba(0, 0, 0, 0.75);
     --light: #ffffff;
@@ -78,6 +78,7 @@ input {
     font-size: 16px;
     font-weight: 600;
 
+    box-sizing: border-box;
     transition: var(--transition);
 }
 
@@ -114,6 +115,7 @@ button {
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    
 }
 
 button:active {
@@ -156,4 +158,28 @@ button:active {
         margin: 20px;
         padding: 30px 25px;
     }
+}
+
+#loading {
+  position: fixed;
+  inset: 0;
+  background: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: #fff;
+}
+
+#loading img {
+  width: 120px;
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
 }

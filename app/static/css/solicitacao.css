@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* ===== VARIÁVEIS GLOBAIS (MESMO PADRÃO DO LOGIN) ===== */
+
 :root {
     --primary: #f0ec13;
     --primary-dark: #c9c500;
@@ -22,7 +22,6 @@
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* ===== BODY (CONSISTENTE COM LOGIN) ===== */
 body {
     margin: 0;
     min-height: 100vh;
@@ -42,7 +41,6 @@ body {
     padding: 40px 20px;
 }
 
-/* ===== CONTAINER PRINCIPAL ===== */
 #from_fundo_solicitacao {
     width: 100%;
     max-width: 680px;
@@ -57,7 +55,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* ===== CABEÇALHO / TÍTULO ===== */
 #from_frente_solicitacao {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     padding: 25px 30px;
@@ -76,13 +73,12 @@ h1 {
     letter-spacing: 0.5px;
 }
 
-/* ===== FORMULÁRIO ===== */
+
 .form-group {
     margin-bottom: 28px;
     text-align: left;
 }
 
-/* ===== LABELS (PADRÃO UNIFICADO) ===== */
 label {
     display: block;
     margin-bottom: 12px;
@@ -92,7 +88,6 @@ label {
     padding-left: 8px;
 }
 
-/* ===== INPUTS (PADRÃO UNIFICADO) ===== */
 input, select, textarea {
     width: 100%;
     padding: 16px 22px;
