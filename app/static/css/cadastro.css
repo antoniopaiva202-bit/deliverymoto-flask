@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 :root {
   --primary: #d3d042;
   --primary-dark: #adac5e;
@@ -11,50 +12,84 @@
   --radius-md: 14px;
 
   --shadow-strong: 0 20px 40px rgba(0,0,0,.35);
+  --shadow-soft: 0 10px 25px rgba(0,0,0,.25);
+
   --transition: 0.3s ease;
 }
 
-/* RESET */
+/* ===== RESET ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* BODY */
+/* ===== BODY ===== */
 body {
   min-height: 100vh;
   font-family: "Segoe UI", system-ui, sans-serif;
+
   background:
     linear-gradient(var(--overlay), var(--overlay)),
     url("/static/imagens/logo_deliverymoto.jpg") center / cover no-repeat;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* CONTAINER */
-.cadastro-container {
+/* ===== LOADING ===== */
+#loading {
+  position: fixed;
+  inset: 0;
+  background: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: #fff;
+}
+
+#loading img {
+  width: 120px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: .4 }
+  50% { opacity: 1 }
+  100% { opacity: .4 }
+}
+
+/* ===== APP ===== */
+.hidden {
+  display: none;
+}
+
+/* ===== CONTAINER ===== */
+.login-container {
   width: 100%;
   max-width: 420px;
   padding: 24px;
 }
 
-.cadastro-container h1 {
+.login-container h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #fff;
 }
 
-/* CARD */
-.cadastro-card {
+/* ===== CARD ===== */
+.login-card {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: var(--radius-lg);
   padding: 26px;
   box-shadow: var(--shadow-strong);
 }
 
-/* FORM */
+/* ===== FORM ===== */
 .form-group {
   margin-bottom: 18px;
 }
@@ -73,6 +108,7 @@ input {
   border: 2px solid #ddd;
   font-size: 16px;
   font-weight: 600;
+  transition: var(--transition);
 }
 
 input:focus {
@@ -80,7 +116,7 @@ input:focus {
   border-color: #000;
 }
 
-/* BOTÃO */
+/* ===== BOTÃO ===== */
 button {
   width: 100%;
   padding: 14px;
@@ -91,31 +127,46 @@ button {
   font-size: 18px;
   font-weight: 800;
   cursor: pointer;
+  transition: var(--transition);
 }
 
 button:hover {
-  opacity: 0.9;
+  opacity: .9;
 }
 
-/* FOOTER */
-.cadastro-footer {
+/* ===== FOOTER ===== */
+.login-footer {
   text-align: center;
   margin-top: 18px;
 }
 
-.cadastro-footer a {
+.login-footer a {
   color: #000;
   font-weight: 800;
   text-decoration: none;
 }
 
-/* MOBILE */
+/* ===== FLASH ===== */
+.flash-container {
+  margin-bottom: 15px;
+}
+
+.flash-message {
+  background: #ffe5e5;
+  color: #a10000;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 480px) {
-  .cadastro-container {
+  .login-container {
     padding: 16px;
   }
 
-  .cadastro-card {
+  .login-card {
     padding: 20px;
   }
 }
