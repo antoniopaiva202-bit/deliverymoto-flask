@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-
+/* ===== VARIÁVEIS ===== */
 :root {
   --primary: #d3d042;
   --primary-dark: #adac5e;
@@ -9,11 +9,7 @@
   --white: #ffffff;
 
   --radius-lg: 22px;
-  --radius-md: 14px;
-
   --shadow-strong: 0 20px 40px rgba(0,0,0,.35);
-  --shadow-soft: 0 10px 25px rgba(0,0,0,.25);
-
   --transition: 0.3s ease;
 }
 
@@ -28,61 +24,30 @@
 body {
   min-height: 100vh;
   font-family: "Segoe UI", system-ui, sans-serif;
-
   background:
     linear-gradient(var(--overlay), var(--overlay)),
     url("/static/imagens/logo_deliverymoto.jpg") center / cover no-repeat;
-
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* ===== LOADING ===== */
-#loading {
-  position: fixed;
-  inset: 0;
-  background: #0f0f0f;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  color: #fff;
-}
-
-#loading img {
-  width: 120px;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: .4 }
-  50% { opacity: 1 }
-  100% { opacity: .4 }
-}
-
-/* ===== APP ===== */
-.hidden {
-  display: none;
 }
 
 /* ===== CONTAINER ===== */
-.login-container {
+.solicitacao-container {
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   padding: 24px;
 }
 
-.login-container h1 {
+.solicitacao-container h1,
+.solicitacao-container h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #fff;
 }
 
 /* ===== CARD ===== */
-.login-card {
+.solicitacao-card {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: var(--radius-lg);
   padding: 26px;
@@ -134,39 +99,13 @@ button:hover {
   opacity: .9;
 }
 
-/* ===== FOOTER ===== */
-.login-footer {
-  text-align: center;
-  margin-top: 18px;
-}
-
-.login-footer a {
-  color: #000;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-/* ===== FLASH ===== */
-.flash-container {
-  margin-bottom: 15px;
-}
-
-.flash-message {
-  background: #ffe5e5;
-  color: #a10000;
-  padding: 12px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 600;
-}
-
 /* ===== MOBILE ===== */
 @media (max-width: 480px) {
-  .login-container {
+  .solicitacao-container {
     padding: 16px;
   }
 
-  .login-card {
+  .solicitacao-card {
     padding: 20px;
   }
 }
