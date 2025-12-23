@@ -1,58 +1,49 @@
 @charset "UTF-8";
 
-/* ===== VARIÁVEIS (MESMO LOGIN) ===== */
 :root {
   --primary: #d3d042;
   --primary-dark: #adac5e;
   --dark: #0f0f0f;
   --overlay: rgba(0, 0, 0, 0.75);
-  --white: #ffffff;
 
   --radius-lg: 22px;
-  --radius-md: 14px;
-
   --shadow-strong: 0 20px 40px rgba(0,0,0,.35);
-  --shadow-soft: 0 10px 25px rgba(0,0,0,.25);
-
-  --transition: 0.3s ease;
 }
 
-/* ===== RESET ===== */
+/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ===== BODY ===== */
+/* BODY */
 body {
   min-height: 100vh;
   font-family: "Segoe UI", system-ui, sans-serif;
-
   background:
     linear-gradient(var(--overlay), var(--overlay)),
     url("/static/imagens/logo_deliverymoto.jpg") center / cover no-repeat;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
 }
 
-/* ===== CONTAINER ===== */
+/* CONTAINER */
 .solicitacao-container {
   width: 100%;
-  max-width: 520px;
+  max-width: 480px;
+  padding: 24px;
 }
 
-/* ===== TÍTULO ===== */
-.solicitacao-container h1 {
+.solicitacao-container h1,
+.solicitacao-container h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #fff;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .solicitacao-card {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: var(--radius-lg);
@@ -60,7 +51,7 @@ body {
   box-shadow: var(--shadow-strong);
 }
 
-/* ===== FORM ===== */
+/* FORM */
 .form-group {
   margin-bottom: 18px;
 }
@@ -72,31 +63,21 @@ label {
   color: #222;
 }
 
-input,
-select,
-textarea {
+input {
   width: 100%;
   padding: 14px 18px;
   border-radius: 30px;
   border: 2px solid #ddd;
   font-size: 16px;
   font-weight: 600;
-  transition: var(--transition);
 }
 
-textarea {
-  border-radius: 18px;
-  resize: vertical;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
+input:focus {
   outline: none;
   border-color: #000;
 }
 
-/* ===== BOTÃO ===== */
+/* BOTÃO */
 button {
   width: 100%;
   padding: 14px;
@@ -107,30 +88,18 @@ button {
   font-size: 18px;
   font-weight: 800;
   cursor: pointer;
-  transition: var(--transition);
-  margin-top: 10px;
 }
 
 button:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
 
-/* ===== FLASH ===== */
-.flash-container {
-  margin-bottom: 15px;
-}
-
-.flash-message {
-  background: #ffe5e5;
-  color: #a10000;
-  padding: 12px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 600;
-}
-
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media (max-width: 480px) {
+  .solicitacao-container {
+    padding: 16px;
+  }
+
   .solicitacao-card {
     padding: 20px;
   }
