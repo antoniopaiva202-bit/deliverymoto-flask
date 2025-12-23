@@ -46,7 +46,7 @@ body {
     max-width: 680px;
     padding: 45px 40px;
     
-    background: var(--light-soft);
+    background: var(--dark);
     backdrop-filter: blur(10px);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-strong);
